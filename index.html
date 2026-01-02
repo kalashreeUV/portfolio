@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kala Shree U V | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#1f2223;
+  --card:#262a2b;
+  --primary:#33b6c4;
+  --text:#f1f5f9;
+ --muted: #ffffff;
+
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:#ffffff;
+}
+
+
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 60px;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:1000;
+   border-bottom:2px solid var(--primary);
+}
+
+.nav-left{
+  color:var(--primary);
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.nav-center a{
+  color:#fff;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.nav-center a:hover{
+  color:var(--primary);
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+}
+
+/* WHITE ICON BOX – EXACT MATCH */
+.icon-box{
+  width:27px;
+  height:27px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  color:#000;
+  border-radius:6px;
+  margin-left:14px;
+}
+
+.icon-box i{
+  font-size:16px;
+}
+/* REMOVE UNDERLINE / LINE FROM ICON LINKS */
+.icon-box{
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.icon-box i{
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+
+
+/* GitHub CIRCLE */
+.icon-circle{
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+  color:#fff;
+  border-radius:50%;
+  margin-left:12px;
+  transition:0.3s;
+}
+
+.icon-circle i{
+  font-size:18px;
+}
+
+/* HOVER EFFECT */
+.icon-box:hover,
+.icon-circle:hover{
+  background:var(--primary);
+  color:#000;
+}
+
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding-top:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(31,34,35,.85), rgba(18,20,20,.95)),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1470&q=80")
+    center/cover;
+}
+.hero img{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  border:4px solid var(--primary);
+  box-shadow:0 0 30px rgba(51,182,196,.6);
+  object-fit: cover;
+  object-position: 30% 10%;   /* ⭐ THIS FIXES HEAD CUT */
+}
+
+
+.hero h1{
+  margin-top:20px;
+  font-size:3rem;
+}
+.hero h1 span{color:var(--primary)}
+
+.hero p{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:1.2rem;
+}
+.btn {
+  display: inline-block;
+  margin: 18px 8px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: var(--primary);
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  transition: all 0.15s ease;
+  transform: translateY(0);
+}
+
+/* Hover raise */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(51,182,196,0.4);
+}
+
+/* Click press effect */
+.btn:active {
+  transform: translateY(2px);      /* moves down */
+  box-shadow: 0 5px 10px rgba(51,182,196,0.2);
+}
+
+
+
+/* Remove blue outline */
+.btn:focus{
+  outline: none;
+  box-shadow: 0 8px 20px rgba(51,182,196,.5);
+}
+
+
+/* SECTION */
+section{
+  max-width:1100px;
+  margin:110px auto;
+  padding:0 20px;
+}
+section h2{
+  text-align:center;
+  font-size:2.3rem;
+  margin-bottom:40px;
+}
+section h2 span{color:var(--primary)}
+
+/* ABOUT */
+.about p{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.8;
+}
+/* About layout wrapper */
+
+/* About container */
+.about-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Role title */
+.about-title{
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+}
+
+.about-title span{
+  color: var(--primary);
+}
+
+/* Two-column text */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Paragraph styling */
+.about-grid p{
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Resume button */
+.about-btn{
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Mobile view */
+@media (max-width: 768px){
+  .about-grid{
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-title{
+    text-align: center;
+  }
+}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:26px;
+}
+
+.skill-card{
+  background:linear-gradient(145deg,#2a2e2f,#1e2122);
+  padding:28px;
+  border-radius:18px;
+  border:1px solid rgba(51,182,196,.4);
+  transition:.4s;
+}
+
+.skill-card:hover{
+  box-shadow:
+    0 0 25px rgba(51,182,196,.6),
+    0 0 45px rgba(51,182,196,.35);
+  transform:translateY(-6px);
+}
+
+.skill-card h3{
+  color:var(--primary);
+  margin-bottom:16px;
+}
+
+.skill-card li{
+  list-style:none;
+  margin:10px 0;
+  color:var(--muted);
+}
+.skill-card i{
+  color:var(--primary);
+  margin-right:10px;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+
+.project{
+  background:var(--card);
+  padding:26px;
+  border-radius:18px;
+  border:1px solid rgba(51,182,196,.35);
+  position:relative;
+
+  /* 👇 ADD THESE 3 LINES */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project:hover{
+  box-shadow:0 0 30px rgba(51,182,196,.7);
+}
+.lang{
+  position:absolute;
+  top:16px;
+  right:16px;
+  background:var(--primary);
+  color:#0f172a;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:.75rem;
+  font-weight:600;
+}
+.project h3{color:var(--primary)}
+.project p{color:var(--muted);margin:12px 0}
+.project a{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:20px;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  text-decoration:none;
+
+  margin-top: auto;   /* 👈 keeps button at bottom center */
+}
+/* INTERNSHIP */
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:var(--primary);
+}
+
+.timeline-item{
+  width:50%;
+  padding:20px 30px;
+  position:relative;
+}
+
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  top:32px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--primary);
+}
+
+.timeline-item.left{
+  left:0;
+  text-align:right;
+}
+.timeline-item.left::before{right:-8px}
+
+.timeline-item.right{
+  left:50%;
+}
+.timeline-item.right::before{left:-8px}
+
+/* BOX */
+.timeline-box{
+  background:var(--card);
+  padding:24px;
+  border-radius:16px;
+  border:1px solid rgba(51,182,196,.4);
+  cursor:pointer;
+  transition:all .3s ease;
+}/* Internship heading color */
+.timeline-box h4{
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+
+/* 🔥 GLOW ONLY ON HOVER */
+.timeline-box:hover{
+  box-shadow:
+    0 0 25px rgba(51,182,196,.7),
+    0 0 50px rgba(51,182,196,.4);
+  transform:translateY(-6px);
+  border-color:var(--primary);
+}
+
+/* ❌ REMOVE CLICK / FOCUS GLOW */
+.timeline-box:focus,
+.timeline-box:active{
+  box-shadow:none;
+  outline:none;
+  transform:none;
+}
+
+
+
+/* CONTACT */
+/* CONTACT SECTION */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:flex-start; /* ⭐ ADD THIS LINE */
+}
+
+.contact-info h3{
+  font-size:1.8rem;
+  margin-bottom:10px;
+  color:#ffffff;
+}
+
+.contact-desc{
+  color:#ffffff;
+  margin-bottom:25px;
+  line-height:1.7;
+}
+
+.info-card{
+  background:var(--card);
+  padding:16px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+  border:1px solid rgba(51,182,196,.35);
+  transition:.3s;
+}/* Make contact cards clickable */
+.info-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.info-link .info-card{
+  cursor: pointer;
+}
+
+.info-link:hover .info-card{
+  box-shadow: 0 0 25px rgba(51,182,196,.7);
+}
+
+
+.info-card i{
+  color:var(--primary);
+  font-size:1.2rem;
+}
+
+.info-card span{
+  color:#ffffff;
+}
+
+.info-card:hover{
+  box-shadow:0 0 20px rgba(51,182,196,.5);
+}
+
+/* FORM */
+.contact-form{
+  background:var(--card);
+  padding:26px;
+  border-radius:16px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:12px;
+  background:#111;
+  color:#fff;
+}
+
+.contact-form button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:var(--primary);
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.contact-form button:hover{
+  box-shadow:0 0 25px rgba(51,182,196,.6);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .contact{
+    grid-template-columns:1fr;
+  }
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:24px;
+  color:#ffffff;
+}#about p{
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+#about p + p{
+  margin-top: 18px;   /* space between paragraphs */
+}/* About text split equally */
+.about-text{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal split */
+  gap: 40px;
+  max-width: 1000px;
+  margin: 30px auto 0;
+}
+
+.about-text p{
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Center button */
+.about-btn{
+  text-align: center;
+  margin-top: 40px;
+}/* About role title */
+.about-container{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-title{
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+ color: #00c4cc;   /* use the same color as "Me" */
+
+  text-align: left;
+}
+
+.about-title span{
+  color: var(--primary);
+}
+
+.about-para{
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+  text-align: left;
+}
+
+.about-btn{
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
+/* Mobile responsive */
+@media (max-width: 768px){
+  .about-text{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* MOBILE */
+@media(max-width:800px){
+  .projects,.contact{grid-template-columns:1fr}
+  .timeline::before{left:8px}
+  .timeline-item{
+    width:100%;
+    left:0!important;
+    text-align:left!important;
+    padding-left:30px;
+  }
+  .timeline-item::before{left:1px!important}
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="nav-left">Kala Shree</div>
+
+  <div class="nav-center">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#internship">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+<div class="nav-right">
+  <a href="https://www.linkedin.com/in/kala-shree-u-v-b070a4293" target="_blank" class="icon-box">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+
+  <a href="https://github.com/kalashreeUV" target="_blank" class="icon-box">
+    <i class="fa-brands fa-github"></i>
+  </a>
+</div>
+
+</div>
+
+
+</nav>
+
+
+<div class="hero">
+  <div>
+    <img src="profile.jpg">
+    <h1>Kala <span>Shree U V</span></h1>
+    <p id="typing"></p>
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <h2>About <span>Me</span></h2>
+
+  <div class="about-container">
+
+    <h3 class="about-title">
+  Aspiring Python Developer & Web Developer
+</h3>
+
+
+    <p class="about-para">
+      I am a passionate Python Full Stack Developer with a strong interest in
+      building real-world web applications. I enjoy creating clean, responsive
+      user interfaces and developing efficient backend systems that solve
+      practical problems.
+    </p>
+
+    <p class="about-para">
+      I have hands-on experience with Python, HTML, CSS, JavaScript, and SQL.
+      I have worked on multiple projects involving web development, APIs, and
+      basic AI concepts, which helped me understand the complete development
+      lifecycle.Motivated to take on challenging projects, I aim to contribute to innovative web applications and grow as a skilled developer in dynamic, real-world environments.
+    </p>
+
+    <div class="about-btn">
+      <a href="assest/Kala Shree U.V.pdf" class="btn" download>View Resume</a>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+<section id="skills">
+  <h2>My <span>Skills</span></h2>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Languages</h3>
+      <ul>
+        <li><i class="fa-brands fa-python"></i> Python</li>
+        <li><i class="fa-brands fa-java"></i> Java (Basic)</li>
+        <li><i class="fa-solid fa-flask"></i> Flask</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Web Technologies</h3>
+      <ul>
+        <li><i class="fa-brands fa-html5"></i> HTML</li>
+        <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+        <li><i class="fa-brands fa-js"></i> JavaScript</li>
+        
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Databases & Tools</h3>
+      <ul>
+        <li><i class="fa-solid fa-database"></i> SQL</li>
+        <li><i class="fa-solid fa-database"></i> MySQL</li>
+       
+        <li><i class="fa-brands fa-github"></i>Git & GitHub</li>
+        <li><i class="fa-solid fa-code"></i> VS Code</li>
+      </ul>
+    </div>
+
+   
+</section>
+
+<section id="projects">
+  <h2>My <span>Projects</span></h2>
+  <div class="projects" id="projectGrid"></div>
+</section>
+
+<section id="internship">
+  <h2>Internship <span>Experience</span></h2>
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="timeline-box">
+        <h4>AI Intern – Barola Technologies</h4>
+        <small>June 2025</small>
+        <p>Worked on real-time AI projects using Python and OpenCV.
+Implemented face recognition, OCR, and object detection features.
+Applied machine learning concepts for practical, real-world solutions.</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="timeline-box">
+        <h4>Web Development Intern – Unified Mentor</h4>
+        <small>May–June 2025</small>
+        <p>Developed responsive web pages using HTML, CSS, and JavaScript.
+Integrated front-end components with backend APIs.
+Focused on performance, usability, and clean code practices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Get In <span>Touch</span></h2>
+
+  <div class="contact">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h3>Let's Connect!</h3>
+      <p class="contact-desc">
+        Open to internships, projects, and collaboration opportunities.  
+        Let’s connect and build something meaningful together.
+      </p>
+
+    <a href="mailto:kalashreeuv29@gmail.com" class="info-link">
+  <div class="info-card">
+    <i class="fa-solid fa-envelope"></i>
+    <span>kalashreeuv29@gmail.com</span>
+  </div>
+</a>
+      <div class="info-card">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 7867999970</span>
+      </div>
+
+<a href="https://www.linkedin.com/in/kala-shree-u-v-b070a4293"
+   target="_blank"
+   class="info-link">
+  <div class="info-card">
+    <i class="fa-brands fa-linkedin"></i>
+    <span>linkedin.com/in/kala-shree-uv</span>
+  </div>
+</a>
+
+<a href="https://github.com/kalashreeUV"
+   target="_blank"
+   class="info-link">
+  <div class="info-card">
+    <i class="fa-brands fa-github"></i>
+    <span>github.com/kalashreeUV</span>
+  </div>
+</a>
+</div>
+
+
+    <!-- RIGHT FORM -->
+   <!-- RIGHT FORM -->
+<form action="https://formsubmit.co/kalashreeuv29@gmail.com"
+      method="POST"
+      class="contact-form">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="email" name="email" placeholder="Your Email" required>
+
+  <input type="text" name="_subject" placeholder="Subject">
+
+  <textarea name="message" rows="4"
+            placeholder="Your message here..." required></textarea>
+
+  <!-- REQUIRED SETTINGS -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- After submit redirect -->
+  <input type="hidden" name="_next"
+         value="http://127.0.0.1:5500/index.html#contact">
+
+  <!-- Better email format -->
+  <input type="hidden" name="_template" value="table">
+
+  <button type="submit">Send Message</button>
+</form>
+
+  </div>
+</section>
+
+
+<footer>© 2025 Kala Shree U V</footer>
+<script>
+/* TYPING EFFECT */
+const roles = ["Python Developer","Web Developer","Frontend Developer"];
+let i = 0, j = 0, cur = "", del = false;
+
+setInterval(() => {
+  typing.innerText = cur;
+  if (!del && j < roles[i].length) cur += roles[i][j++];
+  else if (del && j > 0) cur = cur.slice(0, --j);
+  else {
+    del = !del;
+    if (!del) i = (i + 1) % roles.length;
+  }
+}, 120);
+
+
+/* LOAD PROJECTS */
+fetch("https://api.github.com/users/kalashreeUV/repos")
+.then(r => r.json())
+.then(d => {
+  projectGrid.innerHTML = "";
+  d.filter(r => !r.fork).slice(0, 6).forEach(r => {
+    projectGrid.innerHTML += `
+      <div class="project">
+        
+        <h3>${r.name}</h3>
+        <p>${r.description || "GitHub project"}</p>
+        <a href="${r.html_url}" target="_blank">View on GitHub</a>
+      </div>`;
+  });
+});
+
+
+
+
+</script>
+
+</body>
+</html>
