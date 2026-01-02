@@ -651,7 +651,7 @@ footer{
 </nav>
 
 
-<div class="hero">
+<div class="hero" id="hero">
   <div>
     <img src="profile.jpg">
     <h1>Kala <span>Shree U V</span></h1>
@@ -686,7 +686,7 @@ footer{
     </p>
 
     <div class="about-btn">
-      <a href="assest/Kala Shree U.V.pdf" class="btn" download>View Resume</a>
+      <a href="asset/resume.pdf" class="btn" download>View Resume</a>
     </div>
 
   </div>
@@ -837,8 +837,10 @@ Focused on performance, usability, and clean code practices.</p>
 
 
 <footer>© 2025 Kala Shree U V</footer>
+
 <script>
 /* TYPING EFFECT */
+const typing = document.getElementById("typing");
 const roles = ["Python Developer","Web Developer","Frontend Developer"];
 let i = 0, j = 0, cur = "", del = false;
 
@@ -853,21 +855,30 @@ setInterval(() => {
 }, 120);
 
 
-/* LOAD PROJECTS */
+/* LOAD PROJECTS (AUTO, PORTFOLIO HIDDEN) */
+const projectGrid = document.getElementById("projectGrid");
+
 fetch("https://api.github.com/users/kalashreeUV/repos")
-.then(r => r.json())
-.then(d => {
-  projectGrid.innerHTML = "";
-  d.filter(r => !r.fork).slice(0, 6).forEach(r => {
-    projectGrid.innerHTML += `
-      <div class="project">
-        
-        <h3>${r.name}</h3>
-        <p>${r.description || "GitHub project"}</p>
-        <a href="${r.html_url}" target="_blank">View on GitHub</a>
-      </div>`;
+  .then(r => r.json())
+  .then(d => {
+    projectGrid.innerHTML = "";
+
+    d
+      .filter(r => 
+        !r.fork && 
+        r.name.toLowerCase() !== "portfolio"
+      )
+      .slice(0, 6)
+      .forEach(r => {
+        projectGrid.innerHTML += `
+          <div class="project">
+            <h3>${r.name}</h3>
+            <p>${r.description || "GitHub project"}</p>
+            <a href="${r.html_url}" target="_blank">View on GitHub</a>
+          </div>
+        `;
+      });
   });
-});
 
 
 
@@ -875,4 +886,3 @@ fetch("https://api.github.com/users/kalashreeUV/repos")
 </script>
 
 </body>
-</html>
